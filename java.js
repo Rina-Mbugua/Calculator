@@ -12,3 +12,8 @@ function multiply (e, f) {
     return e * f
 }
 console.log(multiply(25, 4))
+
+function divide (g, h) {
+    return g / h
+}
+console.log(divide(365, 12))
