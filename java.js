@@ -17,3 +17,13 @@ function divide (g, h) {
     return g / h
 }
 console.log(divide(365, 12))
+
+let firstNumber;
+firstNumber = '10'
+
+let secondNumber;
+secondNumber = '5'
+
+let operator;
+operator = '*'
+
