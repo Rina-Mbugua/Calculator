@@ -19,11 +19,29 @@ function divide (g, h) {
 console.log(divide(365, 12))
 
 let firstNumber;
-firstNumber = '10'
+firstNumber = 10;
 
 let secondNumber;
-secondNumber = '5'
+secondNumber = 5;
 
 let operator;
-operator = '*'
+operator = '/'
 
+function calcOperation (firstNumber, operator, secondNumber) {
+    if (operator === '+'){
+        return firstNumber + secondNumber;
+    }
+    else if (operator === '-') {
+        return firstNumber - secondNumber;
+    }
+    else if (operator === '*') {
+        return firstNumber * secondNumber;
+    }
+    else if (operator === '/') {
+        return firstNumber / secondNumber;
+    }
+    else {
+        return 'Invalid operator';
+    }
+}
+console.log(calcOperation(firstNumber, operator, secondNumber))
