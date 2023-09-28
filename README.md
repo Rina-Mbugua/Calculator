@@ -7,13 +7,13 @@
 -multiply (DONE)
 -divide (DONE)
 
-2)
-** A calculator operation will consist of a number, an operator, and another number. For example, 3 + 5. Create three variables for each of the parts of a calculator operation. Create a variable for the first number, the operator, and the second number. You’ll use these variables to update your display later.
+2) (DONE)
+** A calculator operation will consist of a number, an operator, and another number. For example, 3 + 5. Create three variables for each of the parts of a calculator operation. Create a variable for the first number, the operator, and the second number. You’ll use these variables to update your display later. 
 
-3)
+3) (DONE)
 ** Create a new function operate that takes an operator and 2 numbers and then calls one of the above functions on the numbers.
 
-4)
+4) 
 ** Create a basic HTML calculator with buttons for each digit, each of the above functions and an “Equals” key.
 Do not worry about wiring up the JS just yet.
 There should also be a display for the calculator. Go ahead and fill it with some dummy numbers so it looks correct.
