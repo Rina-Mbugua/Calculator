@@ -1,12 +1,12 @@
-function addition (a, b) {
+function add (a, b) {
     return a + b
 }
-console.log(addition(5, 10))
+console.log(add(5, 10))
 
-function subtraction (c, d) {
+function subtract (c, d) {
     return c - d
 }
-console.log(subtraction(30, 3))
+console.log(subtract(30, 3))
 
 function multiply (e, f) {
     return e * f
