@@ -5,10 +5,12 @@ const clearButton = document.querySelectorAll('.clearButton');
 const buttons = document.querySelectorAll('.buttons');
 const display = document.getElementById('displayDiv');
 
-//function to handle button clicks 
-function handleButtonClick(event) {
-    const buttonValue = event.currentTarget.getAttribute('data-value');
-    selectedValue(buttonValue); 
+//intitialis the variable to store the user's input
+let userInput = '';
+
+//function to update the display div with the user's input
+function updateDisplay () {
+    display.textContent = userInput;
 }
 
 //function to handle keyboard press, need to add test that only certain characters can be pressed.
@@ -22,11 +24,16 @@ function selectedValue(value) {
     console.log(value)
 }
 
-//add event lissteners to buttons and document for keyboard input - it's a loop
+//add event listener for buttons and document for keyboard input - it's a loop
 buttons.forEach(button => {
-    button.addEventListener('click', handleButtonClick);
+    button.addEventListener('click', function () {
+        const buttonValue = button.getAttribute('data-value');
+        userInput += buttonValue;
+        updateDisplay();
+    });
 });
 
+//event listener for keydown events 
 document.addEventListener('keydown', function (e){
     const pressedKey = e.key.toLowerCase();
     console.log(pressedKey);
