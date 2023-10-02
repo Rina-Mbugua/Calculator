@@ -18,6 +18,7 @@
 Do not worry about wiring up the JS just yet.
 There should also be a display for the calculator. Go ahead and fill it with some dummy numbers so it looks correct.
 Add a “clear” button.
+# I've added tab navigation, this should be added to the README notes when compeleted. i need to add this to other projects to ensure that their all help with accessibility.
 
 5)
 ** Create the functions that populate the display when you click the number buttons. You should be storing the ‘display value’ in a variable somewhere for use in the next step.
