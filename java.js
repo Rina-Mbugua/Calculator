@@ -2,7 +2,8 @@
 const mainButton = document.querySelectorAll('.mainButton');
 const operatorButton = document.querySelectorAll('.operatorButton');
 const clearButton = document.querySelectorAll('.clearButton');
-const buttons = document.querySelectorAll('.buttons')
+const buttons = document.querySelectorAll('.buttons');
+const display = document.getElementById('displayDiv')
 
 //function to handle button clicks 
 function handleButtonClick(event) {
@@ -29,7 +30,8 @@ buttons.forEach(button => {
 document.addEventListener('keydown', function (e){
     const pressedKey = e.key.toLowerCase();
     console.log(pressedKey);
-})
+}) 
+//the enter button should also equal = 
 
 function add (a, b) {
     return a + b
