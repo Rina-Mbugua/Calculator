@@ -25,7 +25,7 @@ let secondNumber;
 secondNumber = 5;
 
 let operator;
-operator = '/'
+operator = '+'
 
 function calcOperation (firstNumber, operator, secondNumber) {
     if (operator === '+'){
