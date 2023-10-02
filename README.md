@@ -20,11 +20,13 @@ There should also be a display for the calculator. Go ahead and fill it with som
 Add a “clear” button.
 # I've added tab navigation, this should be added to the README notes when compeleted. i need to add this to other projects to ensure that their all help with accessibility.
 
-5)
+5) (DONE)
 ** Create the functions that populate the display when you click the number buttons. You should be storing the ‘display value’ in a variable somewhere for use in the next step.
 # an array/s that can be reset every time the clear button is pressed?
 # I need to make the buttons work in the back end too
 # the values (inlcucing the operators) should be seen at the top of the calculator so that the user can their calculation 
+# only the numbers allowed can be pressed
+
 
 6) 
 ** Make the calculator work! You’ll need to store the first number and second number that are input into the calculator, utilize the operator that the user selects, and then operate() on the two numbers when the user presses the “=” key.
