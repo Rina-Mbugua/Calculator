@@ -39,3 +39,5 @@ You should round answers with long decimals so that they don’t overflow the sc
 Pressing = before entering all of the numbers or an operator could cause problems!
 Pressing “clear” should wipe out any existing data.. make sure the user is really starting fresh after pressing “clear”
 Display a snarky error message if the user tries to divide by 0… and don’t let it crash your calculator!
+
+# ensure that the calculator is able complete calculation with multiple the figures. I've seen some of the popular examples online not able to do this. it need to be fully functional before publishing it to TOP
