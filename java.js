@@ -3,7 +3,7 @@ const mainButton = document.querySelectorAll('.mainButton');
 const operatorButton = document.querySelectorAll('.operatorButton');
 const clearButton = document.querySelectorAll('.clearButton');
 const buttons = document.querySelectorAll('.buttons');
-const display = document.getElementById('displayDiv')
+const display = document.getElementById('displayDiv');
 
 //function to handle button clicks 
 function handleButtonClick(event) {
