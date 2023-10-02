@@ -1,3 +1,26 @@
+//declare buttons button values
+
+const mainButton = document.querySelectorAll('.mainButton');
+const operatorButton = document.querySelectorAll('operatorButton');
+const clearButton = document.querySelectorAll('clearButton');
+
+//function to handle button clicks 
+function handleButtonClick(event) {
+    const buttonValue = event.currectTarget.getAttribute('data-value');
+    selectedValue(buttonValue); 
+}
+
+//function to handle keyboard press, need to add test that only certain characters can be pressed.
+function handleKeyPress(event) {
+    const pressedKey = event.key();
+    selectedValue(pressedKey);
+}
+
+//placeholder function to display what has been pressed
+function selectedValue(value) {
+    console.log(value)
+}
+
 function add (a, b) {
     return a + b
 }
