@@ -1,8 +1,8 @@
 //declare buttons button values
-
 const mainButton = document.querySelectorAll('.mainButton');
 const operatorButton = document.querySelectorAll('operatorButton');
 const clearButton = document.querySelectorAll('clearButton');
+const buttons = document.querySelectorAll('buttons')
 
 //function to handle button clicks 
 function handleButtonClick(event) {
@@ -20,6 +20,18 @@ function handleKeyPress(event) {
 function selectedValue(value) {
     console.log(value)
 }
+
+//add event lissteners to buttons and document for keyboard input - it's a loop
+buttons.forEach(button => {
+    button.addEventListener('click', handleButtonClick);
+    button.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') {
+            handleButtonClick(e);
+        }
+    });
+});
+
+
 
 function add (a, b) {
     return a + b
