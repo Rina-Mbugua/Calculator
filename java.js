@@ -1,7 +1,6 @@
 //declare buttons button values
 const mainButton = document.querySelectorAll('.mainButton');
 const operatorButton = document.querySelectorAll('.operatorButton');
-const clearButton = document.querySelectorAll('.clearButton');
 const buttons = document.querySelectorAll('.buttons');
 const display = document.getElementById('displayDiv');
 
@@ -12,7 +11,6 @@ let userInput = '';
 function updateDisplay () {
     display.textContent = userInput;
 }
-
 
 //placeholder function to display what has been pressed
 function selectedValue(value) {
@@ -35,10 +33,17 @@ document.addEventListener('keydown', function (e){
 }) 
 //the enter button should also equal = 
 
-clearButton.addEventListener('click', function () {
-    userInput = '';
-    updateDisplay();
+document.addEventListener('DOMContentLoaded', function() {
+    const clearButton = document.getElementById('clearButton');
+
+    clearButton.addEventListener('click', function () {
+        userInput = '';
+        updateDisplay();
+    })
 })
+
+
+
 
 function add (a, b) {
     return a + b
