@@ -1,12 +1,12 @@
 //declare buttons button values
 const mainButton = document.querySelectorAll('.mainButton');
-const operatorButton = document.querySelectorAll('operatorButton');
-const clearButton = document.querySelectorAll('clearButton');
-const buttons = document.querySelectorAll('buttons')
+const operatorButton = document.querySelectorAll('.operatorButton');
+const clearButton = document.querySelectorAll('.clearButton');
+const buttons = document.querySelectorAll('.buttons')
 
 //function to handle button clicks 
 function handleButtonClick(event) {
-    const buttonValue = event.currectTarget.getAttribute('data-value');
+    const buttonValue = event.currentTarget.getAttribute('data-value');
     selectedValue(buttonValue); 
 }
 
@@ -24,14 +24,12 @@ function selectedValue(value) {
 //add event lissteners to buttons and document for keyboard input - it's a loop
 buttons.forEach(button => {
     button.addEventListener('click', handleButtonClick);
-    button.addEventListener('keydown', function (e) {
-        if (e.key === 'Enter') {
-            handleButtonClick(e);
-        }
-    });
 });
 
-
+document.addEventListener('keydown', function (e){
+    const pressedKey = e.key.toLowerCase();
+    console.log(pressedKey);
+})
 
 function add (a, b) {
     return a + b
