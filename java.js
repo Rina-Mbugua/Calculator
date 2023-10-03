@@ -3,9 +3,10 @@ const mainButton = document.querySelectorAll('.mainButton');
 const operatorButton = document.querySelectorAll('.operatorButton');
 const buttons = document.querySelectorAll('.buttons');
 const display = document.getElementById('displayDiv');
+const equals = document.getElementById(equals);
 
 //intitialise the variable to store the user's input
-let userInput = '';
+let userInput = ''; 
 
 //function to update the display div with the user's input
 function updateDisplay () {
