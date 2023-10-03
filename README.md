@@ -33,6 +33,10 @@ Add a “clear” button.
         - You should already have the code that can populate the display, so once operate() has been called, update the display with the ‘solution’ to the operation.
         - This is the hardest part of the project. You need to figure out how to store all the values and call the operate function with them. Don’t feel bad if it takes you a while to figure out the logic.
 
+# I need to assign the the equals button and keys to the calcOperation function.
+# I then need to pass the value stored in the variables into the functions 
+# then once the function has run, thee updateDisplay function should show the result 
+
 7)
 Gotchas: watch out for and fix these bugs if they show up in your code:
 Users should be able to string together several operations and get the right answer, with each pair of numbers being evaluated at a time. For example, 12 + 7 - 5 * 3 = should yield 42. An example of the behavior we’re looking for would be this student solution.
