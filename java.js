@@ -75,7 +75,7 @@ secondNumber = 5;
 let operator;
 operator = '+'
 
-function calcOperation (firstNumber, operator, secondNumber) {
+function Operate (firstNumber, operator, secondNumber) {
     if (operator === '+'){
         return firstNumber + secondNumber;
     }
