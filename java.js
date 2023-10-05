@@ -101,6 +101,12 @@ console.log("operators:", operators);
 const equalsButton = document.getElementById('equalsButton');
 equalsButton.addEventListener('click', performCalculation);
 
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' || e.key === '=') {
+        performCalculation();
+    }
+})
+
 //clear button  
 document.addEventListener('DOMContentLoaded', function() {
     const clearButton = document.getElementById('clearButton');
