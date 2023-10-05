@@ -1,24 +1,8 @@
-//declare buttons button values
-const mainButton = document.querySelectorAll('.mainButton');
-const operatorButton = document.querySelectorAll('.operatorButton');
-const buttons = document.querySelectorAll('.buttons');
-const display = document.getElementById('displayDiv');
-const equals = document.getElementById(equals);
-
-//intitialise the variable to store the user's input
+//intitialise the variable to store the user's input and split into numbers & operators 
 let userInput = ''; 
 
-//function to update the display div with the user's input
-function updateDisplay () {
-    display.textContent = userInput;
-}
-
-//placeholder function to display what has been pressed
-function selectedValue(value) {
-    console.log(value)
-}
-
-//add event listener for buttons and document for keyboard input - it's a loop
+//EventListener loop for buttons and update display
+const buttons = document.querySelectorAll('.buttons');
 buttons.forEach(button => {
     button.addEventListener('click', function () {
         const buttonValue = button.getAttribute('data-value');
@@ -27,55 +11,38 @@ buttons.forEach(button => {
     });
 });
 
-//event listener for keydown events 
+//Event listener for keydown events and update display 
 document.addEventListener('keydown', function (e){
     userInput += e.key;
     updateDisplay();
 }) 
-//the enter button should also equal = 
 
-document.addEventListener('DOMContentLoaded', function() {
-    const clearButton = document.getElementById('clearButton');
-
-    clearButton.addEventListener('click', function () {
-        userInput = '';
-        updateDisplay();
-    })
-})
-
-
-
-
-function add (a, b) {
-    return a + b
+//function to update the display div with the user's input
+const display = document.getElementById('displayDiv');
+function updateDisplay () {
+    display.textContent = userInput;
 }
-console.log(add(5, 10))
 
-function subtract (c, d) {
-    return c - d
-}
-console.log(subtract(30, 3))
+//split userInput string into Numbers and Operators arrays using for loop
+const tokens = userInput.split(/([+\-*/])/).map(token => token.trim());
 
-function multiply (e, f) {
-    return e * f
-}
-console.log(multiply(25, 4))
+const filteredTokens = tokens.filter(token => token !== "");
 
-function divide (g, h) {
-    return g / h
-}
-console.log(divide(365, 12))
+//The arrays are being initialized  
+const numbers = [] 
+const operators = []
 
-let firstNumber;
-firstNumber = 10;
+filteredTokens.forEach(token => {
+    if (!NaN(token)) {
+        numbers.push(parseFloat(token))
+    } else {
+        operators.push(token);
+    }
+});
 
-let secondNumber;
-secondNumber = 5;
-
-let operator;
-operator = '+'
-
-function Operate (a, operator, b) {
+//const operatorButton = document.querySelectorAll('.operatorButton');
+//operate logic 
+function operate (a, operator, b) {
     switch (operator) {
         case '+':
             return a + b;
@@ -89,3 +56,24 @@ function Operate (a, operator, b) {
             throw new Error('Invalid operator: ${operator}')
     }
 }
+
+
+//add event listerner for equals to call operate() function  
+const equals = document.getElementById(equals);
+
+//perform calculations based on operators
+
+
+
+//clear button  
+document.addEventListener('DOMContentLoaded', function() {
+    const clearButton = document.getElementById('clearButton');
+
+    clearButton.addEventListener('click', function () {
+        userInput = '';
+        updateDisplay();
+    })
+})
+
+//declare buttons button values
+//const mainButton = document.querySelectorAll('.mainButton');
