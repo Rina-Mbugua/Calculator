@@ -98,7 +98,9 @@ console.log("operators:", operators);
           // Check for division by zero
           if (operator === '/' && nextNumber === 0) {
             alert("Zero division detected! Time for a math refresher.");
-            return;
+            userInput = 0; // Update userInput to 0
+            updateDisplay(0); // Update the display to show 0
+            return; // Stop the function
         }
 
         result = operate(result, operator, nextNumber)
