@@ -48,8 +48,16 @@ function operate (a, operator, b) {
 //perform calculations in pairs by looping through the numbers & operators arrays and udpdatinf the results 
 function performCalculation () {
 
+    const parts = userInput.split("="); //remove the equals sign from the 'string'
+
+    //the entire calc should not be less than two tokens
+    if (parts.length < 2) {
+        console.log('Invalid input.');
+        return;
+    }
+
     //split userInput string into Numbers and Operators arrays using for loop
-const tokens = userInput.split(/([+\-*/](?!=))/).map(token => token.trim());
+const tokens = parts[0].split(/([+\-*/](?!=))/).map(token => token.trim());
 
 console.log("userInput:", userInput);
 console.log("tokens:", tokens);
