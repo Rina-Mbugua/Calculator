@@ -94,6 +94,13 @@ console.log("operators:", operators);
     for (let i = 0; i < operators.length; i++) {
         const operator = operators[i];
         const nextNumber = numbers[i];
+
+          // Check for division by zero
+          if (operator === '/' && nextNumber === 0) {
+            alert("Zero division detected! Time for a math refresher.");
+            return;
+        }
+
         result = operate(result, operator, nextNumber)
     }
 
