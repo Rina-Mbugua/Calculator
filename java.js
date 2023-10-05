@@ -58,14 +58,9 @@ function operate (a, operator, b) {
 }
 
 
-//add event listerner for equals to call operate() function  
-const equalsButton = document.getElementById(equalsButton);
-equalsButton.addEventListener('click', performCalculation);
-
-
 //perform calculations based on operators
 //initialise the first number of the operation with the first token in the numbers array 
-let result = numbers.shift
+let result = numbers.shift()
 
 //perform calculations in pairs by looping through the numbers & operators arrays and udpdatinf the results 
 function performCalculation () {
@@ -79,6 +74,10 @@ function performCalculation () {
     console.log('result:', result);
 }
 
+
+//event listerner for equals to call performCalculation()  
+const equalsButton = document.getElementById(equalsButton);
+equalsButton.addEventListener('click', performCalculation);
 
 //clear button  
 document.addEventListener('DOMContentLoaded', function() {
