@@ -75,21 +75,17 @@ secondNumber = 5;
 let operator;
 operator = '+'
 
-function Operate (firstNumber, operator, secondNumber) {
-    if (operator === '+'){
-        return firstNumber + secondNumber;
-    }
-    else if (operator === '-') {
-        return firstNumber - secondNumber;
-    }
-    else if (operator === '*') {
-        return firstNumber * secondNumber;
-    }
-    else if (operator === '/') {
-        return firstNumber / secondNumber;
-    }
-    else {
-        return 'Invalid operator';
+function Operate (a, operator, b) {
+    switch (operator) {
+        case '+':
+            return a + b;
+        case '-':
+            return a - b;
+        case '*':
+            return a * b;
+        case '/':
+            return a / b;
+        default:
+            throw new Error('Invalid operator: ${operator}')
     }
 }
-console.log(calcOperation(firstNumber, operator, secondNumber))
