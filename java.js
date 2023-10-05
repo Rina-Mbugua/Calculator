@@ -59,22 +59,25 @@ function operate (a, operator, b) {
 
 
 //add event listerner for equals to call operate() function  
-const equals = document.getElementById(equals);
+const equalsButton = document.getElementById(equalsButton);
+equalsButton.addEventListener('click', performCalculation);
+
 
 //perform calculations based on operators
-
 //initialise the first number of the operation with the first token in the numbers array 
 let result = numbers.shift
 
 //perform calculations in pairs by looping through the numbers & operators arrays and udpdatinf the results 
-for (let i = 0; i < operators.length; i++) {
-    const operator = operators[i];
-    const nextNumber = numbers[i];
-    result = operate(result, operator, nextNumber)
-}
+function performCalculation () {
+    for (let i = 0; i < operators.length; i++) {
+        const operator = operators[i];
+        const nextNumber = numbers[i];
+        result = operate(result, operator, nextNumber)
+    }
 
-//output the final result 
-console.log('result:', result)
+    //output the final result 
+    console.log('result:', result);
+}
 
 
 //clear button  
