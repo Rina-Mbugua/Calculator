@@ -37,7 +37,7 @@ function operate (a, operator, b) {
         case '/':
             return a / b;
         default:
-            throw new Error('Invalid operator: ${operator}')
+            throw new Error(`Invalid operator: ${operator}`)
     }
 }
 
@@ -50,6 +50,9 @@ function performCalculation () {
 
     //split userInput string into Numbers and Operators arrays using for loop
 const tokens = userInput.split(/([+\-*/])/).map(token => token.trim());
+
+console.log("userInput:", userInput);
+console.log("tokens:", tokens);
 
 const filteredTokens = tokens.filter(token => token !== "");
 
@@ -65,6 +68,8 @@ filteredTokens.forEach(token => {
     }
 });
 
+console.log("numbers:", numbers);
+console.log("operators:", operators);
 
 //initialise the first number of the operation with the first token in the numbers array 
     let result = numbers.shift();
