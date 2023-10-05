@@ -90,6 +90,10 @@ console.log("operators:", operators);
 
     //output the final result 
     console.log('result:', result);
+
+    userInput = result
+
+    updateDisplay(result);
 }
 
 
