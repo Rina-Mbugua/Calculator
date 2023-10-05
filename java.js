@@ -49,7 +49,7 @@ function operate (a, operator, b) {
 function performCalculation () {
 
     //split userInput string into Numbers and Operators arrays using for loop
-const tokens = userInput.split(/([+\-*/])/).map(token => token.trim());
+const tokens = userInput.split(/([+\-*/](?!=))/).map(token => token.trim());
 
 console.log("userInput:", userInput);
 console.log("tokens:", tokens);
