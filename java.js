@@ -12,10 +12,19 @@ buttons.forEach(button => {
 });
 
 //Event listener for keydown events and update display 
-document.addEventListener('keydown', function (e){
-    userInput += e.key;
-    updateDisplay();
-}) 
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' || e.key === '=') {
+        e.preventDefault(); // prevent the default behavior of the 'Enter' key.
+        equalsButton.click();
+    } else {
+        // Add a condition to exclude non-numeric and non-operator keys
+        const validKeys = /^[0-9+\-*/=]$/;
+        if (validKeys.test(e.key)) {
+            userInput += e.key;
+            updateDisplay();
+        }
+    }
+});
 
 //function to update the display div with the user's input
 const display = document.getElementById('displayDiv');
@@ -97,15 +106,16 @@ console.log("operators:", operators);
 }
 
 
-//event listerner for equals to call performCalculation()  
+//event listerners for equals to call performCalculation()  
 const equalsButton = document.getElementById('equalsButton');
 equalsButton.addEventListener('click', performCalculation);
 
 document.addEventListener('keydown', function(e) {
     if (e.key === 'Enter' || e.key === '=') {
-        performCalculation();
+        e.preventDefault(); // Prevent the default behavior of the key
+        equalsButton.click(); // Trigger a click event on the "=" button
     }
-})
+});
 
 //clear button  
 document.addEventListener('DOMContentLoaded', function() {
