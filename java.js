@@ -23,22 +23,6 @@ function updateDisplay () {
     display.textContent = userInput;
 }
 
-//split userInput string into Numbers and Operators arrays using for loop
-const tokens = userInput.split(/([+\-*/])/).map(token => token.trim());
-
-const filteredTokens = tokens.filter(token => token !== "");
-
-//The arrays are being initialized  
-const numbers = [] 
-const operators = []
-
-filteredTokens.forEach(token => {
-    if (!NaN(token)) {
-        numbers.push(parseFloat(token))
-    } else {
-        operators.push(token);
-    }
-});
 
 //const operatorButton = document.querySelectorAll('.operatorButton');
 //operate logic 
@@ -59,11 +43,32 @@ function operate (a, operator, b) {
 
 
 //perform calculations based on operators
-//initialise the first number of the operation with the first token in the numbers array 
-let result = numbers.shift()
+
 
 //perform calculations in pairs by looping through the numbers & operators arrays and udpdatinf the results 
 function performCalculation () {
+
+    //split userInput string into Numbers and Operators arrays using for loop
+const tokens = userInput.split(/([+\-*/])/).map(token => token.trim());
+
+const filteredTokens = tokens.filter(token => token !== "");
+
+//The arrays are being initialized  
+const numbers = [] 
+const operators = []
+
+filteredTokens.forEach(token => {
+    if (!isNaN(token)) {
+        numbers.push(parseFloat(token))
+    } else {
+        operators.push(token);
+    }
+});
+
+
+//initialise the first number of the operation with the first token in the numbers array 
+    let result = numbers.shift();
+
     for (let i = 0; i < operators.length; i++) {
         const operator = operators[i];
         const nextNumber = numbers[i];
@@ -76,7 +81,7 @@ function performCalculation () {
 
 
 //event listerner for equals to call performCalculation()  
-const equalsButton = document.getElementById(equalsButton);
+const equalsButton = document.getElementById('equalsButton');
 equalsButton.addEventListener('click', performCalculation);
 
 //clear button  
