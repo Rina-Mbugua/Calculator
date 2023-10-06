@@ -29,6 +29,9 @@ document.addEventListener('keydown', function(e) {
 //function to update the display div with the user's input
 const display = document.getElementById('displayDiv');
 function updateDisplay () {
+    if (typeof result === 'number') {
+        result = result.toFixed(6); // Format the result with a maximum of 6 decimal points
+    }
     display.textContent = userInput;
 }
 
